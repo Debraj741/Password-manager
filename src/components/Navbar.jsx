@@ -14,10 +14,12 @@ const Navbar = () => {
                     <li><a className='text-xl font-bold hover:text-green-600 transition-all' href="#">About</a></li>
                     <li><a className='text-xl font-bold hover:text-green-600 transition-all' href="#">Contact</a></li>
                 </ul> */}
-                <button className="btn flex justify-center items-center gap-2 bg-green-900 py-1 px-3 rounded-full">
-                    <img src="/icons/github.svg" alt="Github" />
-                    <span className='font-bold'>GitHub</span>
-                </button>
+                <a href="https://github.com/Debraj741/Password-manager.git" target='_blank'>
+                    <button className="btn flex justify-center items-center gap-2 bg-green-900 py-1 px-3 rounded-full">
+                        <img src="/icons/github.svg" alt="Github" />
+                        <span className='font-bold'>GitHub</span>
+                    </button>
+                </a>
             </div>
         </nav>
     )

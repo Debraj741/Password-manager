@@ -53,7 +53,7 @@ const Manager = () => {
         if (form.site.length > 3 && form.username.length > 3 && form.password.length > 3) {
 
             //If any such id exists in the database delete it
-            await fetch("http://localhost:3000/", {method: "DELETE", headers: {"Content-Type" : "application/json"}, body : JSON.stringify({id : form.id})})
+            // await fetch("http://localhost:3000/", {method: "DELETE", headers: {"Content-Type" : "application/json"}, body : JSON.stringify({id : form.id})})
 
 
 
@@ -88,9 +88,10 @@ const Manager = () => {
         }
     }
 
-    const editPassword = (id) => {
-        setform({...passwordarray.filter(item => item.id === id)[0], id:id});
+    const editPassword = async(id) => {
+        setform(passwordarray.filter(item => item.id === id)[0]);
         setPasswordarray(passwordarray.filter(item => item.id !== id))
+        await fetch("http://localhost:3000/", {method: "DELETE", headers: {"Content-Type" : "application/json"}, body : JSON.stringify({id})})
     }
 
     const handleChange = (e) => {
